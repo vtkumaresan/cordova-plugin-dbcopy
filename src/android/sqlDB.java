@@ -126,7 +126,7 @@ public class sqlDB extends CordovaPlugin {
                     InputStream myInput = null;
                     JSONObject response = new JSONObject();
                     try {
-                        myInput = cordova.getActivity().getAssets().open("www/" + dbName);
+                        myInput = cordova.getActivity().getAssets().open("public/" + dbName);
 
                         OutputStream myOutput = new FileOutputStream(dbpath);
                         byte[] buffer = new byte[1024];
