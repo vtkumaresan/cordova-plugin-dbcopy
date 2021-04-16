@@ -66,8 +66,8 @@
 	
 	//Get Database from www directory
 	NSString *sourceDB = @"";
-	if([src rangeOfString:@"www"].location != NSNotFound){
-		NSString *wwwDir = [[[NSBundle mainBundle] bundlePath] stringByAppendingPathComponent:@"www"];
+	if([src rangeOfString:@"public"].location != NSNotFound){
+		NSString *wwwDir = [[[NSBundle mainBundle] bundlePath] stringByAppendingPathComponent:@"public"];
 		sourceDB = [wwwDir stringByAppendingPathComponent:dbname];
 	} else {
 		if([src rangeOfString:@"file://"].location != NSNotFound){
@@ -116,7 +116,7 @@
 	NSLog(@"[sqlDB] Dbname = %@",dbname);
 	NSLog(@"[sqlDB] location = %d",location);
 	
-	[self copyDb:location source:@"www" db:dbname callBackID:command.callbackId];
+	[self copyDb:location source:@"public" db:dbname callBackID:command.callbackId];
 	
 	// [self.commandDelegate sendPluginResult:result callbackId:command.callbackId];
 }
